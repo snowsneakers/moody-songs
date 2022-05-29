@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    background: #191919;
+    color: rgb(236, 236, 209);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Roboto Mono', monospace;
+}
+header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+select{
+    padding: 1rem;
+}
+iframe{
+    margin: 2rem 0 .5rem 0;
+    width: 420px;
+    height: 236px;
+}
+.albumInfo{
+    width: 100%;
+}
+.albumStuff{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    animation: fade;
+    animation-duration: 2s;
+}
+.lyrics{
+    width: 420px;
+    height: 417px;
+    overflow: scroll;
+    line-height: 1.5;
+    white-space: pre-line;
+    text-align: center;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.lyrics::-webkit-scrollbar {
+    display: none;
+  }
+h1{
+    font-size: 1.5rem;
+}
+h2{
+    font-size: 1.25rem;
+}
+.welcome{
+    text-align: center;
+    width: 100%;
+}
+
+
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+@media (max-width: 768px){
+    .albumStuff{
+        flex-direction: column;
+        gap: 0;
+    }
+    h1{
+        display: none;
+    }
+    h2{
+        display: none;
+    }
+}
+
+@media (max-width: 425px){
+    .lyrics{
+        padding: 0 1rem;
+        width: 100%;
+    }
+    iframe{
+        width: 315px;
+        height: 177px;
+    }
+}
