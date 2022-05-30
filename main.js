@@ -4,14 +4,14 @@ async function makeReq(){
     const res = await fetch('/api')
     const data = await res.json()
     console.log(data)
-    function blah(index){
+    function mood(index){
         const div = document.createElement('div')
         div.classList.add('albumStuff')
         div.innerHTML = `
             <div>
             <iframe frameBorder="0" src="${data[index].url}"></iframe>
-            <h1>${data[index].artist}</h1>
-            <h2>${data[index].song}</h2>
+            <h2>${data[index].artist}</h2>
+            <h3>${data[index].song}</h3>
             </div>
             <div class="lyrics">
             <p>${data[index].lyrics}</p>
@@ -20,22 +20,21 @@ async function makeReq(){
         document.querySelector('.albumInfo').appendChild(div)
     }
 
-
     document.querySelector('select').addEventListener('change', () => {
         console.log(document.querySelector('select').value)
         let emo = document.querySelector('select').value
         clear()
     
         if(emo == 'happy' ){
-            blah(0)
+            mood(0)
         } else if(emo == 'angry'){
-            blah(1)
+            mood(1)
         } else if(emo == 'sad'){
-            blah(3)
+            mood(3)
         } else if(emo == 'chill'){
-            blah(2)
+            mood(2)
         } else if(emo == 'inLove'){
-            blah(4)
+            mood(4)
         }
     })
 }
@@ -46,6 +45,3 @@ function clear(){
             albumInfo.removeChild(albumInfo.firstChild);
         }
 }
-
-
-
