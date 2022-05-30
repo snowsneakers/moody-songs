@@ -3,7 +3,11 @@ const fs = require("fs");
 const url = require("url");
 const querystring = require("querystring");
 const figlet = require("figlet");
-const songs = require("./songs/songs.js")
+const angrySongs = require("./songs/angrySongs.js")
+const chillSongs = require("./songs/chillSongs.js")
+const happySongs = require("./songs/happySongs.js")
+const sadSongs = require("./songs/sadSongs.js")
+const loveSongs = require("./songs/loveSongs.js")
 
 const server = http.createServer((req, res) => {
   const page = url.parse(req.url).pathname;
