@@ -7,7 +7,7 @@ const angrySongs = require("./songs/angrySongs.js")
 const chillSongs = require("./songs/chillSongs.js")
 const happySongs = require("./songs/happySongs.js")
 const sadSongs = require("./songs/sadSongs.js")
-const loveSongs = require("./songs/loveSongs.js")
+// const loveSongs = require("./songs/loveSongs.js")
 
 const server = http.createServer((req, res) => {
   const page = url.parse(req.url).pathname;
@@ -26,8 +26,20 @@ const server = http.createServer((req, res) => {
     case "/":
       readWrite("index.html", "text/html");
       break;
-    case "/api":
-      res.end(JSON.stringify(songs.obj.songs));
+    case "/api/angry":
+      res.end(JSON.stringify(angrySongs.angrySongsObj.angrySongs));
+      break;
+    case "/api/happy":
+      res.end(JSON.stringify(happySongs.happySongsObj.happySongs));
+      break;
+    case "/api/sad":
+      res.end(JSON.stringify(sadSongs.sadSongsObj.sadSongs));
+      break;
+    // case "/api/inLove":
+    //   res.end(JSON.stringify(loveSongs.loveSongsObj.loveSongs));
+    //   break;
+    case "/api/chill":
+      res.end(JSON.stringify(chillSongs.chillSongsObj.chillSongs));
       break;
     case "/styles.css":
       fs.readFile("styles.css", function (err, data) {
