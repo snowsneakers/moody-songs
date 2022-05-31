@@ -4,25 +4,35 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 body{
     width: 100%;
-    background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    min-height: 100vh;
     color: rgb(236, 236, 209);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    min-height: 100vh;
-    font-family: 'Roboto Mono', monospace;
+    background: linear-gradient(-45deg, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);
+    background-size: 400% 400%;
+    position: relative;
+    animation: animate 7.5s ease-in-out infinite;
+}
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 header{
     margin-bottom: 2rem;
     padding: 1rem;
 }
 header,
-.titleArtist,
-.lyrics{
+.songDetails,
+.lyrics,
+.welcome{
     background: rgba(0, 0, 0, 0.05);
     backdrop-filter: saturate(120%) blur(20px);
     border-radius: 1rem;
@@ -43,8 +53,37 @@ select{
     padding: 1rem;
 }
 
+ul{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+li{
+    font-size: 4rem;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    animation: emojiSpin 5s ease-in-out infinite;
+    user-select: none;
+    
+}
+li:nth-child(2){
+    animation-delay: .5s;
+}
+li:nth-child(4){
+    animation-delay: .25s;
+}
+li:nth-child(5){
+    animation-delay: .6s;
+}
+
+
 p{
     padding: 0 1rem;
+}
+.welcome{
+    width: 40%;
+    padding: 1rem;
+
 }
 iframe{
     display: block;
@@ -54,6 +93,7 @@ iframe{
 }
 .albumInfo{
     width: 100%;
+    padding: 2rem;
 }
 .albumStuff{
     width: 100%;
@@ -67,6 +107,16 @@ iframe{
 .titleArtist{
     padding: 1rem;
     font-size: 3rem;
+}
+.titleArtist h1{
+    margin-bottom: .5rem;
+}
+.songDetails{
+    overflow: hidden;
+    min-height: 417px;
+}
+.songDetails span{
+    font-size: 1rem;
 }
 .lyrics{
     width: 420px;
@@ -102,18 +152,27 @@ h3{
     }
 }
 
-
-@media (max-width: 768px){
+@media (max-width: 985px){
     .albumStuff{
         flex-direction: column;
-        gap: 0;
     }
-    h1{
-        display: none;
+    li{
+        font-size: 2rem;
     }
-    h2{
-        display: none;
+    .songDetails{
+        height: auto;
     }
+    .lyrics{
+    }
+    .welcome{
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px){
+    
+   
+    
 }
 
 @media (max-width: 425px){
@@ -124,6 +183,18 @@ h3{
     iframe{
         width: 315px;
         height: 177px;
+    }
+    .albumStuff{
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 380px){
+    li{
+        font-size: 1.25rem;
+    }
+    header h1{
+        font-size: 2rem;
     }
 }
 
@@ -140,19 +211,6 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-.page-content{
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(-45deg, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);;
-  background-size: 400% 400%;
-  position: relative;
-  animation: animate 7.5s ease-in-out infinite;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 @keyframes animate{
   0%{
     background-position: 0 50%;
@@ -165,10 +223,14 @@ body {
   }
 } 
 
-
-button{
-    background: transparent;
-    border: none;
-    outline: none;
-    color: white;
+@keyframes emojiSpin{
+    0%{
+        transform: translate(0,0);
+    }
+    50%{
+        transform: translate(0,-20px);
+    }
+    100%{
+        transform: translate(0,0);
+    }
 }
