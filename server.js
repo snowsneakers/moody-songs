@@ -43,14 +43,14 @@ const server = http.createServer((req, res) => {
     case "/api/chill":
       res.end(JSON.stringify(chillSongs.chillSongsObj.chillSongs));
       break;
-    case "/styles.css":
-      fs.readFile("styles.css", function (err, data) {
+    case "/css/styles.css":
+      fs.readFile("css/styles.css", function (err, data) {
         res.write(data);
         res.end();
       });
       break;
-    case "/main.js":
-      readWrite("main.js", "text/javascript");
+    case "/js/main.js":
+      readWrite("js/main.js", "text/javascript");
       break;
     default:
       figlet("404!!", function (err, data) {
