@@ -107,14 +107,13 @@ iframe {
   padding: 1rem;
   font-size: 3rem;
 }
-.titleArtist h1 {
-  margin-bottom: 0.5rem;
-}
 .songDetails {
   overflow: hidden;
   min-height: 417px;
 }
 .songDetails span {
+  display: block;
+  margin-top: .5rem;
   font-size: 1rem;
 }
 
@@ -216,7 +215,6 @@ h3 {
     gap: 2rem;
   }
 }
-
 @media (max-width: 380px) {
   li {
     font-size: 1.25rem;
