@@ -36,7 +36,8 @@ p{
     padding: 1rem;
 }
 iframe{
-    margin: 2rem 0 .5rem 0;
+    display: block;
+    margin: .5rem auto;
     width: 420px;
     height: 236px;
 }
@@ -132,6 +133,7 @@ body {
   position: relative;
   animation: animate 7.5s ease-in-out infinite;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
