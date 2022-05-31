@@ -33,7 +33,7 @@ const sadSongsObj = {
       {
         artist: 'Snoh Alegra',
         song: 'LOST YOU',
-        url: 'https://www.youtube.com/embed/jnpQTXs1PZ0',
+        url: 'https://www.youtube.com/embed/YKeXXnyvMgI',
         lyrics: `Didn't know that love could change up\n Then I woke up to a stranger\n After all this time I thought that I knew\n You and I was no debating\n Now it's up for conversation\n Tell me was it all a lie? I'm confused (mmm)\n But then you say what I wanna hear\n 'Cause you know it's gon' get me here\n Every time I say that I'm through\n And even though I know it ain't right\n Said I wasn't gon' spend the night\n Here I am right back with you\n Although I lost you\n I, I'll always want you\n 'Cause you take me high (high)\n See I'll always want you\n But I know I've lost you (ah)\n Say it, right\n Ah, ah-ah-ah\n I won't hold the past against you\n When you hold me, I forget to\n I can never draw the line with you, no\n Wish I knew what you were thinking\n But that probably wouldn't change shit\n So deep in, I'm still falling for you\n But then you say what I wanna hear\n 'Cause you know it's gon' get me here\n Every time I say that I'm through\n And even though I know it ain't right\n Said I wasn't gon' spend the night\n Here I am right back with you\n Although I lost you\n I, I'll always want you (I'll always want you)\n 'Cause you take me high (high)\n See I'll always want you\n But I know I've lost you\n Ah-da-da-da-da (yeah)\n Ah-ah-ah`
       },
       {
