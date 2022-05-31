@@ -9,6 +9,8 @@ const happySongs = require("./songs/happySongs.js")
 const sadSongs = require("./songs/sadSongs.js")
 const loveSongs = require("./songs/loveSongs.js")
 
+
+const PORT = process.env.PORT || 8000
 const server = http.createServer((req, res) => {
   const page = url.parse(req.url).pathname;
   // const params = querystring.parse(url.parse(req.url).query);
@@ -64,4 +66,4 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(8000);
+server.listen(PORT);
