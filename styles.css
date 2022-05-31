@@ -16,10 +16,21 @@ body{
     min-height: 100vh;
     font-family: 'Roboto Mono', monospace;
 }
+header{
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+header,
+.titleArtist,
+.lyrics{
+    background: rgba(0, 0, 0, 0.05);
+    backdrop-filter: saturate(120%) blur(20px);
+    border-radius: 1rem;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.25);
+}
 h1{
     font-size: 3rem;
     font-weight: bold;
-    margin-bottom: 2rem;
 }
 .dropdown-menu{
     width: 100%;
@@ -33,7 +44,7 @@ select{
 }
 
 p{
-    padding: 1rem;
+    padding: 0 1rem;
 }
 iframe{
     display: block;
@@ -52,6 +63,10 @@ iframe{
     gap: 5rem;
     animation: fade;
     animation-duration: 2s;
+}
+.titleArtist{
+    padding: 1rem;
+    font-size: 3rem;
 }
 .lyrics{
     width: 420px;
@@ -138,15 +153,6 @@ body {
   align-items: center;
 }
 
-h1{
-    color: #fff;
-    background: rgba(255,255,255,.2);
-    padding: 20px;
-    font-size: 50px;
-    border-radius: 10px;
-    text-align: center;
-  }
-
 @keyframes animate{
   0%{
     background-position: 0 50%;
@@ -158,3 +164,11 @@ h1{
     background-position: 0 50%;
   }
 } 
+
+
+button{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+}
