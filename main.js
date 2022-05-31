@@ -1,24 +1,30 @@
-//On change of dropdown menu it runs runs makeReq funciton
-document.querySelector("select").addEventListener("change", makeReq);
+//Loop through all li elements and give them evenetlisteners that on click will call function that fetches api
+let emojis = document.querySelectorAll('li')
+emojis.forEach(x => {
+    x.addEventListener('click', (e) => {
+        //this gets the value of element and removes 'emoji' from it to match api path
+        makeReq(e.target.classList.value.split('-')[0])
+    })
+})
 
 //based on selection, function fetches api from server
-async function makeReq() {
-    //stores value of select element in variable
-  let mood = document.querySelector("select").value;
-
-  //fetches api from server
+async function makeReq(mood) {
+  let title = document.querySelector('header span')
+  //path/ value name for love songs was inLove songs. This statement manipulates string if 'in' is included and makes first letter uppercase and rest lowercase 
+  mood.includes('in') ? title.innerText = mood.split('').slice(2).join('') : title.innerText = mood[0].toUpperCase() + mood.substr(1).toLowerCase()
+  //fetches api from server based on which emoji clicked
   const res = await fetch(`/api/${mood}`);
   //stores data from fetch
   const data = await res.json();
   console.log(data);
+  //gets random number to pick random index
   let random = Math.floor(Math.random() * data.length);
 
   
-  const song = new Songs(data[random].url, data[random].artist, data[random].song, data[random].lyrics);
+  const song = new Songs(data[random].url, data[random].artist, data[random].song, data[random].lyrics, random, data.length);
   
   //clears previous song from container
   song.clear();
-
   //dpending on what value is selected calls getSongInfo function
   switch (mood) {
     case "happy":
@@ -42,11 +48,13 @@ async function makeReq() {
 //creates song class
 class Songs {
     //parameters are what values from api obj we want
-  constructor(url, artist, song, lyrics) {
+  constructor(url, artist, song, lyrics, random, length) {
     this.url = url;
     this.artist = artist;
     this.song = song;
     this.lyrics = lyrics;
+    this.random = random
+    this.length = length
   }
 
   //clears container
@@ -62,12 +70,12 @@ class Songs {
     const div = document.createElement("div");
     div.classList.add("albumStuff");
     div.innerHTML = `
-                <div>
+                <div class="songDetails">
                     <iframe frameBorder="0" src="${this.url}"></iframe>
                     <div class="titleArtist">
                         <h1>${this.artist}</h1>
                         <h2>${this.song}</h2>
-                        <button onClick="makeReq()">New Song</button>
+                        <span>Track ${this.random + 1} / ${this.length}</span>
                     </div>
                 </div>
                 <div class="lyrics">
