@@ -64,8 +64,8 @@ class Songs {
     div.innerHTML = `
                 <div>
                     <iframe frameBorder="0" src="${this.url}"></iframe>
-                    <h1>${this.artist}</h1>
-                    <h2>${this.song}</h2>
+                    <h2>${this.artist}</h2>
+                    <h3>${this.song}</h3>
                 </div>
                 <div class="lyrics">
                     <p>${this.lyrics}</p>
