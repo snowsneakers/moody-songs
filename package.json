@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/snowsneakers/moody-songs/issues"
   },
-  "homepage": "https://github.com/snowsneakers/moody-songs#readme"
+  "homepage": "https://github.com/snowsneakers/moody-songs#readme",
+  "dependencies": {
+    "figlet": "^1.5.2"
+  }
 }
