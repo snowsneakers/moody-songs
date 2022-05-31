@@ -64,10 +64,14 @@ class Songs {
     div.innerHTML = `
                 <div>
                     <iframe frameBorder="0" src="${this.url}"></iframe>
-                    <h1>${this.artist}</h1>
-                    <h2>${this.song}</h2>
+                    <div class="titleArtist">
+                        <h1>${this.artist}</h1>
+                        <h2>${this.song}</h2>
+                        <button onClick="makeReq()">New Song</button>
+                    </div>
                 </div>
                 <div class="lyrics">
+                    <h2>Lyrics</h2>
                     <p>${this.lyrics}</p>
                 </div>
             `;
