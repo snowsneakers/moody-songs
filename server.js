@@ -3,14 +3,13 @@ const fs = require("fs");
 const url = require("url");
 const querystring = require("querystring");
 const figlet = require("figlet");
-const angrySongs = require("./songs/angrySongs.js")
-const chillSongs = require("./songs/chillSongs.js")
-const happySongs = require("./songs/happySongs.js")
-const sadSongs = require("./songs/sadSongs.js")
-const loveSongs = require("./songs/loveSongs.js")
+const angrySongs = require("./songs/angrySongs.js");
+const chillSongs = require("./songs/chillSongs.js");
+const happySongs = require("./songs/happySongs.js");
+const sadSongs = require("./songs/sadSongs.js");
+const loveSongs = require("./songs/loveSongs.js");
 
-
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 8000;
 const server = http.createServer((req, res) => {
   const page = url.parse(req.url).pathname;
   // const params = querystring.parse(url.parse(req.url).query);
